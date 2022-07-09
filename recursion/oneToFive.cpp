@@ -9,8 +9,6 @@ int onefive(int n)
     }
     onefive(n-1);
     cout<<n<<endl;
-    
-    
 return 0;    
 }
 int main() {
