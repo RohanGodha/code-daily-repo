@@ -36,6 +36,6 @@ int main()
    node *head=NULL;
    head= push(head,10);
    head= push(head,20);
-//    head= push(head,30);
+   head= push(head,30);
    printList(head);
 }
