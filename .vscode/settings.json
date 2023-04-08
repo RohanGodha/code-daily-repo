@@ -2,6 +2,7 @@
     "files.associations": {
         "*.rmd": "markdown",
         "iostream": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "algorithm": "cpp"
     }
 }
