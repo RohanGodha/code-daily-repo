@@ -1,0 +1,31 @@
+select: This is a keyword in SQL used to select the columns to be displayed in the result set.
+
+employee_id: This is the name of the column that we want to select and display in the result set.
+
+if: This is a function in SQL that returns a value based on a specified condition. In this case, it will check if the employee meets the specified conditions and return either their salary or 0 as a bonus amount.
+
+employee_id%2=1: This is a conditional statement that checks whether the employee_id is an odd number. The % symbol is the modulo operator in SQL, which returns the remainder of dividing the first number by the second. So employee_id%2 will return either 0 or 1, and employee_id%2=1 will be true if the employee_id is an odd number.
+
+and: This is a logical operator in SQL used to combine multiple conditions in a single statement. In this case, we are checking whether the employee_id is an odd number and the employee's name does not start with the letter "M".
+
+name: This is the name of the column in the employees table that contains the employee's name.
+
+NOT: This is a logical operator in SQL that negates the condition that follows it. In this case, it negates the condition that the employee's name starts with the letter "M".
+
+REGEXP: This is a keyword in SQL used to perform a regular expression search on a specified column. In this case, we are searching for names that do not start with the letter "M".
+
+'^M': This is a regular expression pattern that matches any string that starts with the letter "M". The ^ symbol means the start of a string, and M is the letter we are searching for.
+
+salary: This is the name of the column in the employees table that contains the employee's salary.
+
+0: This is the value that will be returned by the if function if the employee does not meet the specified conditions and is not eligible for a bonus.
+
+as: This is a keyword in SQL used to assign an alias to a column. In this case, we are assigning the alias "bonus" to the result of the if function.
+
+from: This is a keyword in SQL used to specify the table from which we want to select data.
+
+employees: This is the name of the table from which we want to select data.
+
+order by: This is a keyword in SQL used to sort the result set by a specified column.
+
+employee_id: This is the name of the column by which we want to sort the result set.
