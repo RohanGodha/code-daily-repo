@@ -3,6 +3,8 @@
         "*.rmd": "markdown",
         "iostream": "cpp",
         "xutility": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "xhash": "cpp",
+        "ostream": "cpp"
     }
 }
