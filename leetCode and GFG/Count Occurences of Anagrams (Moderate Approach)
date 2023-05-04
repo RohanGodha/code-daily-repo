@@ -1,0 +1,15 @@
+int search(string pat, string txt) {
+        int k = pat.size(), n = txt.size(), count = 0;
+        unordered_map<char, int> pat_freq, substr_freq;
+        for (char c : pat) pat_freq[c]++;
+        for (int i = 0; i <= n - k; i++) {
+            substr_freq.clear();
+            for (int j = i; j < i + k; j++) {
+                substr_freq[txt[j]]++;
+            }
+            if (pat_freq == substr_freq) {
+                count++;
+            }
+        }
+        return count;
+    }
