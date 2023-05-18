@@ -1,4 +1,6 @@
 <script>
+	//Currency Converter
+	//INR to USD
 	var formatter = new Intl.NumberFormat("en-US", {
 	  style: "currency",
 	  currency: "USD"
