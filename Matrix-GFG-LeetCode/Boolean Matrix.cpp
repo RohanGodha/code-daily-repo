@@ -10,13 +10,18 @@ class Solution
     public:
     void booleanMatrix(vector<vector<int> > &matrix)
     {
-        // code here 
+        // Get the number of rows and columns in the matrix
         int row = matrix.size();
         int col = matrix[0].size();
         
-        bool arr_row[row]; fill(arr_row, arr_row+row, false);
-        bool arr_col[col]; fill(arr_col, arr_col+col, false);
+        // Create boolean arrays to track rows and columns containing 1
+        bool arr_row[row]; // Boolean array to track if a row contains 1
+        fill(arr_row, arr_row+row, false); // Initializing all elements to false
         
+        bool arr_col[col]; // Boolean array to track if a column contains 1
+        fill(arr_col, arr_col+col, false); // Initializing all elements to false
+        
+        // Traverse the matrix to mark the rows and columns containing 1
         for(int i=0;i<row;i++)
         {
             for(int j=0;j<col;j++){
@@ -27,6 +32,7 @@ class Solution
             }
         }
         
+        // Modify the matrix based on the marked rows
         for(int i=0;i<row;i++){
             if(arr_row[i]){
                 for(int j=0;j<col;j++){
@@ -35,6 +41,7 @@ class Solution
             }
         }
         
+        // Modify the matrix based on the marked columns
         for(int i=0;i<col;i++){
             if(arr_col[i]){
                 for(int j=0;j<row;j++){
@@ -80,7 +87,5 @@ int main() {
     }
     return 0;
 }
-
-
 
 // } Driver Code Ends
