@@ -5,3 +5,4 @@ DONE:
 # 3. Sliding Window 
 # 4. Arrays
 # 5. Matrix
+# 6. Trees
