@@ -1,7 +1,7 @@
-
 #include<iostream>
 using namespace std;
-struct BTree//node declaration {
+struct BTree//node declaration 
+{
    int *d;
    BTree **child_ptr;
    bool l;
