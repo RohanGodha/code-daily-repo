@@ -1,0 +1,27 @@
+SELECT
+    CASE
+        WHEN net_borrowing >= 0 THEN 'positive'
+        ELSE 'negative'
+    END AS borrowing_category,
+    GROUP_CONCAT(customer_name ORDER BY ABS(net_borrowing) DESC) AS customer_names
+FROM (
+    SELECT
+        c.customer_name,
+        SUM(CASE WHEN t.transaction_type = 'DEBIT' THEN t.amount ELSE 0 END) AS total_debits,
+        SUM(CASE WHEN t.transaction_type = 'CREDIT' THEN t.amount ELSE 0 END) AS total_credits,
+        SUM(CASE WHEN t.transaction_date >= '2023-12-01' AND t.transaction_date < '2024-01-01' THEN t.amount ELSE 0 END) AS december_transactions,
+        SUM(CASE WHEN t.transaction_type = 'DEBIT' THEN t.amount ELSE -t.amount END) AS net_borrowing
+    FROM
+        customers_table c
+    JOIN
+        transactions_table t ON c.customer_id = t.customer_id
+    GROUP BY
+        c.customer_name
+) AS customer_summary
+GROUP BY
+    borrowing_category
+ORDER BY
+    CASE
+        WHEN borrowing_category = 'positive' THEN ABS(MAX(net_borrowing))
+        ELSE ABS(MIN(net_borrowing))
+    END DESC;
