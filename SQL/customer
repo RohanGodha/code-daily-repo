@@ -1,0 +1,16 @@
+SELECT
+    c.customer_name,
+    CASE
+        WHEN COUNT(*) = SUM(CASE WHEN o.status = 'DELIVERED' THEN 1 ELSE 0 END) THEN 'COMPLETED'
+        WHEN SUM(CASE WHEN o.status = 'DELIVERED' THEN 1 ELSE 0 END) > 0 THEN 'IN PROGRESS'
+        WHEN SUM(CASE WHEN o.status = 'SUBMITTED' THEN 1 ELSE 0 END) > 0 AND SUM(CASE WHEN o.status = 'DELIVERED' THEN 1 ELSE 0 END) = 0 THEN 'AWAITING PROGRESS'
+        ELSE 'AWAITING SUBMISSION'
+    END AS final_status
+FROM
+    customers_table c
+JOIN
+    orders_table o ON c.customer_id = o.customer_id
+GROUP BY
+    c.customer_name
+ORDER BY
+    c.customer_name;
