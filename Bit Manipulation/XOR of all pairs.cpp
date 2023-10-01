@@ -17,7 +17,7 @@ int main() {
         }
     }
 
-    cout << "XOR of all pairs: " << result << endl;
+    cout << "XOR of all pairs is: " << result << endl;
     
     return 0;
 }
