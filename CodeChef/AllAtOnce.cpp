@@ -1,5 +1,6 @@
 // Simple Division
 
+
 #include <iostream>
 #include <vector>
     using namespace std;
